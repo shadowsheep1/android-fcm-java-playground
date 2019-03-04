@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "XXX",
+		"name": "FCMPlayground",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "(ADI) https://fcm.googleapis.com/fcm/send Copy Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "878848ab-c289-40e1-ad29-d2a7f669366a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "key=<firebase project server auth key>"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"to\" : \"<device fcm token>\",\n \"collapse_key\" : \"type_a\",\n \"priority\" : \"high\",\n \"notification\" : {\n     \"body\" : \"Test Notification body\",\n     \"title\": \"Push notificaiton title\",\n     \"sound\": \"default\"\n }\n}"
+				},
+				"url": {
+					"raw": "https://fcm.googleapis.com/fcm/send",
+					"protocol": "https",
+					"host": [
+						"fcm",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"fcm",
+						"send"
+					]
+				},
+				"description": "Invio notifica push FCM"
+			},
+			"response": []
+		}
+	]
+}
